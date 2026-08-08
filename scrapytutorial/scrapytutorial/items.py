@@ -3,11 +3,9 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-from dataclasses import dataclass
+import scrapy
 
-
-@dataclass
-class ScrapytutorialItem:
-    # define the fields for your item here like:
-    # name: str | None = None
-    pass
+class QuoteItem(scrapy.Item):
+    text = scrapy.Field()
+    author = scrapy.Field()
+    tags = scrapy.Field()
