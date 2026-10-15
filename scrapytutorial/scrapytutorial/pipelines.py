@@ -40,7 +40,7 @@ class MongoDBPipeline(object):
         self.db = self.client[self.database]
 
     def process_item(self, item, spider):
-        name = item.__class__.__name__
+        name = item.__class__.__name__  # MongoDB 中会创建一个名为 Scrapytutorial 的数据库，以及一个 Quotes 的数据表
         self.db[name].insert_one(dict(item))
         return item
     
